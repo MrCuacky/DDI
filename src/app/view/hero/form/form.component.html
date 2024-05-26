@@ -1,0 +1,29 @@
+<div class=" h-screen flex justify-center items-center">
+    <form [formGroup]="formGroup" (ngSubmit)="submit()" class="mx-auto w-fit grid gap-4 shadow p-6 rounded my-auto">
+        <mat-form-field>
+            <mat-label>Ingresa tu contraseña</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+            <button mat-icon-button matSuffix (click)="clickEvent($event)" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf="formGroup.get('password')?.hasError('required')">
+                La contraseña es obligatoria
+              </mat-error>
+              <mat-error *ngIf="formGroup.get('password')?.hasError('minlength')">
+                La contraseña debe de contener al menos 3 caracters
+              </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Número de telefono</mat-label>
+            <input matInput formControlName="phone">
+            <mat-error *ngIf="formGroup.get('phone')?.hasError('required')">
+                El número de telefono es obligatorio
+            </mat-error>
+            <mat-error *ngIf="formGroup.get('phone')?.hasError('pattern')">
+                El número de telefono debe de contener 10 digitos
+            </mat-error>
+        </mat-form-field>
+        <button mat-raised-button type="submit" color="primary" [disabled]="!formGroup.valid">Aceptar</button>
+    </form>
+</div>
