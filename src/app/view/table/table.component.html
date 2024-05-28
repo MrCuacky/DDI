@@ -1,4 +1,9 @@
 <div class=" mx-auto w-fit px-20 my-10 py-6 shadow rounded">
+    <mat-form-field appearance="standard">
+        <mat-label>Busca por id, nombre, peso o simbolo</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Id, nombre, peso o símbolo">
+    </mat-form-field>
+    
     <table mat-table [dataSource]="dataSource">
 
         <ng-container matColumnDef="position" >
@@ -24,4 +29,5 @@
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
+    <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 20]" class=" mt-2"></mat-paginator>
 </div>

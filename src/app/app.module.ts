@@ -14,6 +14,8 @@ import {MatIconModule} from '@angular/material/icon';
 import { TableComponent } from './view/table/table.component';
 import { DashboardComponent } from './view/dashboard/dashboard.component';
 import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { MatTableModule } from '@angular/material/table';
     MatButtonModule,
     MatSlideToggleModule,
     MatIconModule,
-    MatTableModule
+    MatTableModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
