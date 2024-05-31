@@ -1,4 +1,6 @@
 <div class=" mx-auto w-fit px-20 my-10 py-6 shadow rounded">
+    <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 20]" class="w-[100%] mt-2"></mat-paginator>
+
     <table mat-table [dataSource]="dataSource">
 
         <ng-container matColumnDef="position" >
@@ -24,4 +26,5 @@
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
+
 </div>
