@@ -14,6 +14,10 @@ import { TableComponent } from './view/table/table.component';
 import { DashboardComponent } from './view/dashboard/dashboard.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+<<<<<<< HEAD
+=======
+
+>>>>>>> 288fb330c15bb370ea51b32c9570e3ab37154b9e
 
 @NgModule({
   declarations: [

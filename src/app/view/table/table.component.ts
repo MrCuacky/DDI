@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
 
 export interface PeriodicElement {
   name: string;
@@ -41,5 +43,14 @@ export class TableComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
+<<<<<<< HEAD
   }
+=======
+  }
+
+applyFilter(event: Event) {
+  const filterValue = (event.target as HTMLInputElement).value;
+  this.dataSource.filter = filterValue.trim().toLowerCase();
+>>>>>>> 288fb330c15bb370ea51b32c9570e3ab37154b9e
+}
 }
